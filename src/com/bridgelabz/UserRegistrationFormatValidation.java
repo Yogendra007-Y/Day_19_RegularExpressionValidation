@@ -9,7 +9,7 @@ public class UserRegistrationFormatValidation {
     String RegexName = "^[A-Z]{1}+[a-z]{2,}\\s[A-Z]{1}[a-z]{2,}"; //User Registration Pattern For First Name And Last Name
     String RegexEmail = "^[A-Za-z0-9.]+@[a-z.]+[a-z]{1,3}$"; //User Registration Pattern For Email ID
     String RegexPhoneNo = "^[0-9]{2}\\s[0-9]{10}$"; //User Registration Pattern For Phone Number
-    String RegexPassword = "^[A-Za-z0-9]{8,}"; //User Registration Pattern For Password
+    String RegexPassword = "^[A-Z]{1,}+[a-zA-Z0-9]{8,}"; //User Registration Pattern For Password
 
     public void validationOfRegex(String regex,String name){
         pattern = Pattern.compile(regex);
@@ -48,7 +48,7 @@ public class UserRegistrationFormatValidation {
         boolean validationPassword = matcher.matches();
         System.out.println(validationPassword);
         if(!validationPassword) {
-            System.out.println("Enter Password According To Pattern: [a-zA-Z0-9]{8,}");
+            System.out.println("Enter Password According To Pattern: [A-Z]{1,}+[a-zA-Z0-9]{8,}");
         }
     }
 }
