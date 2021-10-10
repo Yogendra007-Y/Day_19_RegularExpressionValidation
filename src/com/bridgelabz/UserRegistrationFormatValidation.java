@@ -8,8 +8,10 @@ public class UserRegistrationFormatValidation {
     Pattern pattern;
     String RegexName = "^[A-Z]{1}+[a-z]{2,}\\s[A-Z]{1}[a-z]{2,}"; //User Registration Pattern For First Name And Last Name
     String RegexEmail = "^[A-Za-z0-9.]+@[a-z.]+[a-z]{1,3}$"; //User Registration Pattern For Email ID
+    String RegexPhoneNo = "^[0-9]{2}\\s[0-9]{10}$"; //User Registration Pattern For Phone Number
 
-    //Created A Method To Check User Name Validation With String RegexName
+
+    //Created A Method To Check UserName Validation With String RegexName
     public void nameValidation(String name) {
         pattern = Pattern.compile(RegexName);
         matcher = pattern.matcher(name);
@@ -20,13 +22,23 @@ public class UserRegistrationFormatValidation {
         }
     }
     //Created A Method To Check User Email ID Validation With String RegexEmail
-    public void validateOfEmail(String email){
+    public void emailIdValidation(String email){
         pattern = Pattern.compile(RegexEmail);
         matcher = pattern.matcher(email);
         Boolean validation = matcher.matches();
         System.out.println(validation);
         if(validation == false){
-            System.out.println("Email A Valid Email ID According To Pattern");
+            System.out.println("Enter A Valid Email ID According To Pattern");
+        }
+    }
+    //Created A Method To Check User Email ID Validation With String RegexPhoneNo
+    public void phoneNumberValidation(String phoneNumber){
+        pattern = Pattern.compile(RegexPhoneNo);
+        matcher = pattern.matcher(phoneNumber);
+        boolean val = matcher.matches();
+        System.out.println(val);
+        if(val == false){
+            System.out.println("number should have ten digit word");
         }
     }
 }
